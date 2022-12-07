@@ -1,14 +1,124 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tarjeta de crédito válida</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
-    <script src="index.js" type="module"></script>
-  </body>
+</head>
+
+<body>
+
+
+    <div class="contenedor">
+        <!--Esto será para mostrar la parte de adelante de la tarjeta-->
+        <section class="tarjeta" id="tarjeta">
+            <div class="frente">
+                <div class="logo" id="logo">
+                    <!--La imagen se mostrará desd Js-->
+                </div>
+                <img src="img/chip.png" class="chip" alt="">
+
+                <!--Se utilizara flexbox por lo que se agregara la leyenda 
+                para cada parte que se quiere agregar -->
+
+                <div class="datos">
+                    <div class="flexbox">
+
+                        <div class="grupo" id="numero">
+                            <p class="label"> Número de tarjeta</p>
+                            <p class="numero">#### #### #### ####</p>
+                        </div>
+                        <div class="grupo" id="validacion">
+                            <p class="label"> Validación</p>
+                            <div id="valida">
+                                <p class="validacion"> XXXX </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--En esta parte irá la leyenda de abajo, 
+                        en nombre va lo de la izquierda y en expiracion lo de la derecha-->
+                    <div class="flexbox">
+                        <div class="grupo" id="nombre">
+                            <p class="label">Nombre tarjeta</p>
+                            <p class="nombre">NOMBRE APELLIDO</p>
+                        </div>
+                        <div class="grupo" id="expiracion">
+                            <p class="label">Expiración</p>
+                            <p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--ESTO ES PARA EL BOTÓN QUE MUESTRA Y QUITA EL FORMULARIO-->
+
+        <div class="contenedor-btn">
+            <button class="btn-abrir-formulario" id="btn-abrir-formulario">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+
+        <!--Formulario-->
+
+        <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
+            <!--Se agrega cada parte del formulario por grupo que será para el # de tarjeta y el nombre-->
+            <div class="grupo">
+                <label for="inputNumero">Número Tarjeta</label>
+                <!--El label con el atributo for sirve para activar el input y así poder escribir-->
+                <input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+                <!--En esta línea esta agregando el maximo de # permitidos y que no se pueda autocompletar-->
+            </div>
+            <div class="grupo">
+                <label for="inputNombre">Nombre</label>
+                <input type="text" id="inputNombre" maxlength="19" autocomplete="off">
+            </div>
+
+            <!--Ahora se agregará un flexbox (general) para mes, año y cvv, donde se agruparán mes y año a la izq (tendrá un flexbox para el gripo Expira) y aparte el # cvv a la der-->
+            <!--1ero se hará el grupo de Expira-->
+            <div class="flexbox">
+                <div class="grupo-expira">
+                    <label class="selectMes">Expira</label>
+                    <div class="flexbox">
+                        <!--Se agregaran dos div, uno para mes y el otro para el año-->
+                        <div class="grupo-select">
+                            <select name="mes" id="selectMes">
+                                <option disabled selected> Mes </option>
+                                <!--Con disabled select se hace que la palabra "mes" quede seleccionada y deshabilitada para que le usuario seleccione un #-->
+                                <!--Las opciones (en este caso los números del mes) se agregarán de forma dinamica con Js quien será el responsable de generarlos-->
+                            </select>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+
+                        <div class="grupo-select">
+                            <select name="year" id="selectYear">
+                                <option disabled selected> Año </option>
+                            </select>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!--2do el grupo cvv-->
+
+                <div class="grupo-cvv">
+                    <label for="inputCVV">CVV</label>
+                    <input type="text" id="inputCVV" maxlength="3">
+                </div>
+            </div>
+
+            <!--Botón Enviar-->
+            <button type="submit" class="btn-enviar">Enviar</button>
+            <!-- type= submit para cuando le den un click envíe los valores-->
+        </form>
+    </div>
+
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <!--Esto es para poder agregar iconos-->
+    <script src="./index.js" type="module"></script>
+</body>
+
 </html>
