@@ -60,7 +60,6 @@ quiere decir que el input va a recibir un evento cuando presione una tecla y con
     const mask = validator.maskify(formulario.inputNumero.value)
     //console.log(mask); 
 
-
     const numerox = formulario.inputNumero.value.replace(/ /g, "");
 
     const tcValida = validator.isValid(numerox);
@@ -89,12 +88,12 @@ quiere decir que el input va a recibir un evento cuando presione una tecla y con
     }
 
     //Para identificar si es visa o mastercard
-    if (valorInput[0] === 4) {
+    if (valorInput[0] == 4) {
         logo.innerHTML = ''; //Reinicia el elemento, en este caso la imagen
         const imagen = document.createElement('img');
         imagen.src = 'img/visa.png';
         logo.appendChild(imagen);
-    } else if (valorInput[0] === 5) {
+    } else if (valorInput[0] == 5) {
         logo.innerHTML = ''; //Cada que se ejecuta 1ero elimina el logo y luego vuelve a gregar la imagen (en este caso es la imagen pero es el contenido que tenga dentro)
         const imagen = document.createElement('img');
         imagen.src = 'img/master.png';
