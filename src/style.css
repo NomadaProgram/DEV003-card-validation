@@ -1,32 +1,34 @@
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-	background: #d7f6de;
-	font-family: 'Lato', sans-serif;
+    background: #d7f6de;
+    font-family: 'Lato', sans-serif;
 }
 
-.contenedor{
+.contenedor {
     width: 90%;
     max-width: 1000px;
     padding: 40px 20px;
     margin: auto;
     display: flex;
-    flex-direction: column; 
-    align-items: center; /*Este se pone porque estamos centrando flex-direction horizontal, si fuera para centrar de forma vertical se utiliza justify-content*/
+    flex-direction: column;
+    align-items: center;
+    /*Este se pone porque estamos centrando flex-direction horizontal, si fuera para centrar de forma vertical se utiliza justify-content*/
 }
 
 /*Estilos generales de la tarjeta parte del frente*/
 
-.tarjeta{
+.tarjeta {
     width: 100%;
     max-width: 550px;
     color: #fff;
     cursor: pointer;
-    z-index: 2; /*Esta es para que quede en la capa 2 y este entre el formulario y el botón + */
+    z-index: 2;
+    /*Esta es para que quede en la capa 2 y este entre el formulario y el botón + */
 }
 
 .tarjeta {
@@ -35,9 +37,12 @@ body {
     border-radius: 15px;
     min-height: 315px;
     display: flex;
-    flex-direction: column; /*Porque cada elemento esta uno sobre otro es decir, tipo columna*/
-    justify-content: space-between; /*Para separar cada elemento*/
-    box-shadow: 0 10px 10px 0 rgba(90, 116, 148, 0.3); /*Para la sombra de la tarjeta*/
+    flex-direction: column;
+    /*Porque cada elemento esta uno sobre otro es decir, tipo columna*/
+    justify-content: space-between;
+    /*Para separar cada elemento*/
+    box-shadow: 0 10px 10px 0 rgba(90, 116, 148, 0.3);
+    /*Para la sombra de la tarjeta*/
     background: url(./img/screen-6.jpg);
     background-size: cover;
 }
@@ -73,7 +78,8 @@ body {
 .tarjeta .grupo .expiracion {
     color: #fff;
     font-size: 22px;
-    text-transform: uppercase; /*Con esto nos aseguramos que las letras estén en mayusculas*/
+    text-transform: uppercase;
+    /*Con esto nos aseguramos que las letras estén en mayusculas*/
 }
 
 .tarjeta .flexbox {
@@ -84,21 +90,24 @@ body {
 
 /*CONTENEDOR DEL BOTÓN*/
 
-.contenedor-btn .btn-abrir-formulario{
+.contenedor-btn .btn-abrir-formulario {
     width: 50px;
     height: 50px;
     font-size: 20px;
     line-height: 20px;
     background: #20DF3F;
     color: #fff;
-    position: relative; /*Es para poder desplazarlo por lo que se agrega abajo la posición que se quiere*/
+    position: relative;
+    /*Es para poder desplazarlo por lo que se agrega abajo la posición que se quiere*/
     top: -25px;
-    z-index: 3; /*Esta es la capa 3 para que se vea arriba de la tarjeta*/
+    z-index: 3;
+    /*Esta es la capa 3 para que se vea arriba de la tarjeta*/
     border-radius: 100%;
     box-shadow: -5px 4px 8px rgba(1, 255, 43, 0.4);
     padding: 5px;
     transition: all .2s ease;
-    border: none; /*Quita el borde que se da por defecto*/
+    border: none;
+    /*Quita el borde que se da por defecto*/
     cursor: pointer;
 }
 
@@ -114,7 +123,7 @@ body {
 
 /*Formulario Tarjeta*/
 
-.formulario-tarjeta{
+.formulario-tarjeta {
     background: #fff;
     width: 100%;
     max-width: 700px;
@@ -122,13 +131,15 @@ body {
     border-radius: 10px;
     position: relative;
     top: -150px;
-    z-index: 1; /*No es necesario porque por defecto esta en la capa 1, pero paara reflejarlo se agrega*/
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /*son las coordenadas, estos valore hacen que se cierre el rectangulo y ahcer el efecto de que "desaparece"*/
+    z-index: 1;
+    /*No es necesario porque por defecto esta en la capa 1, pero paara reflejarlo se agrega*/
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    /*son las coordenadas, estos valore hacen que se cierre el rectangulo y hacer el efecto de que "desaparece"*/
     transition: clip-path .3s ease-out;
 }
 
 .formulario-tarjeta.active {
-    clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%) ;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .formulario-tarjeta label {
@@ -147,41 +158,41 @@ body {
     width: 100%;
     padding: 5px 12px;
     transition: .3s ease all;
-    border-radius: 5px; 
+    border-radius: 5px;
 }
 
 /*Para cambiar el color de los input y los select cuando se seleccione*/
 
 .formulario-tarjeta input:hover,
-.formulario-tarjeta select:hover{
+.formulario-tarjeta select:hover {
     border: 2px solid #00AD1D;
 }
 
 .formulario-tarjeta input:focus,
-.formulario-tarjeta select:focus{
-    outline: rgb(4,4,4);
-    box-shadow: 1px 7px 10px -5px rgba(90,116,148,0.3);
+.formulario-tarjeta select:focus {
+    outline: rgb(4, 4, 4);
+    box-shadow: 1px 7px 10px -5px rgba(90, 116, 148, 0.3);
 }
 
-.formulario-tarjeta input{
+.formulario-tarjeta input {
     margin-bottom: 20px;
     text-transform: uppercase;
 }
 
-.formulario-tarjeta .flexbox{
+.formulario-tarjeta .flexbox {
     display: flex;
     justify-content: space-between;
 }
 
-.formulario-tarjeta .grupo-expira{
+.formulario-tarjeta .grupo-expira {
     width: 100%;
 }
 
-.formulario-tarjeta .cvv{
+.formulario-tarjeta .cvv {
     min-width: 100%;
 }
 
-.formulario-tarjeta .valida{
+.formulario-tarjeta .valida {
     width: 100%;
 }
 
@@ -192,7 +203,8 @@ body {
 }
 
 .formulario-tarjeta select {
-    -webkit-appearance: none; /*Con esto se le quita la apariencia, es decir elimina la flechita del select del mes y del año*/
+    -webkit-appearance: none;
+    /*Con esto se le quita la apariencia, es decir elimina la flechita del select del mes y del año*/
 }
 
 .formulario-tarjeta .grupo-select i {
@@ -207,13 +219,13 @@ body {
     color: #6AE87F;
 }
 
-.formulario-tarjeta .btn-enviar{
+.formulario-tarjeta .btn-enviar {
     border: none;
     padding: 10px;
     font-size: 22px;
     color: #fff;
     background: #20DF3F;
-    box-shadow: 2px 2px 10px 0px rgba(1,255,43,0.4);
+    box-shadow: 2px 2px 10px 0px rgba(1, 255, 43, 0.4);
     cursor: pointer;
 }
 
