@@ -1,6 +1,6 @@
 import validator from './validator.js';
 
-const btnAbrirFormulario = document.querySelector('#btn-abrir-formulario');
+const btnAbrirFormulario = document.querySelector('#btn-abrir-formulario'); //querySelector: Función que retorna el primer elemento que coincide con el selector CSS dado como parámetro.
 const formulario = document.querySelector('#formulario-tarjeta');
 const numeroTarjeta = document.querySelector('#tarjeta .numero');
 const nombreTarjeta = document.querySelector('#tarjeta .nombre');
@@ -12,7 +12,7 @@ const yearExpiracion = document.querySelector('#tarjeta #expiracion .year');
 //Botón de abrir formulario.
 btnAbrirFormulario.addEventListener('click', () => {
     //Para que gire el botón
-    btnAbrirFormulario.classList.toggle('active');
+    btnAbrirFormulario.classList.toggle('active'); //El toggle significa que si no tiene la clase active se la va a poner y si ya la tiene se la va a quitar
     //Para mostras el formulario
     formulario.classList.toggle('active');
 });
@@ -88,12 +88,12 @@ quiere decir que el input va a recibir un evento cuando presione una tecla y con
     }
 
     //Para identificar si es visa o mastercard
-    if (valorInput[0] == 4) {
+    if (parseInt(valorInput[0]) === 4) {
         logo.innerHTML = ''; //Reinicia el elemento, en este caso la imagen
         const imagen = document.createElement('img');
         imagen.src = 'img/visa.png';
         logo.appendChild(imagen);
-    } else if (valorInput[0] == 5) {
+    } else if (parseInt(valorInput[0]) === 5) {
         logo.innerHTML = ''; //Cada que se ejecuta 1ero elimina el logo y luego vuelve a gregar la imagen (en este caso es la imagen pero es el contenido que tenga dentro)
         const imagen = document.createElement('img');
         imagen.src = 'img/master.png';
